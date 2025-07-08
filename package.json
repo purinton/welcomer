@@ -1,7 +1,7 @@
 {
     "name": "@purinton/welcomer",
     "type": "module",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A minimal Discord bot that replies to every message in a specific channel with a \ud83d\udc4b emoji.",
     "main": "welcomer.mjs",
     "scripts": {
