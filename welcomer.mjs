@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 import 'dotenv/config';
-//import { createDb } from '@purinton/mysql';
 import { createDiscord } from '@purinton/discord';
 import { log, fs, path, registerHandlers, registerSignals } from '@purinton/common';
 
@@ -12,23 +11,20 @@ const version = packageJson.version;
 
 const presence = { activities: [{ name: `welcomer v${version}`, type: 4 }], status: 'online' };
 
-//const db = await createDb({ log });
-//registerSignals({ shutdownHook: () => db.end() });
+const channel_id = process.env.WELCOME_CHANNEL_ID || null;
+
+if (!channel_id) {
+    log.error('No WELCOME_CHANNEL_ID provided. Please set it in your environment variables.');
+    process.exit(1);
+}
+
 const client = await createDiscord({
     log,
     rootDir: path(import.meta),
     context: {
-        //db,
         presence,
-        version
-    },
-    intents: {
-        Guilds: true,
-        GuildMessages: true,
-        MessageContent: false,
-        GuildMembers: false,
-        GuildPresences: false,
-        GuildVoiceStates: false,
+        version,
+        channel_id,
     }
 });
 registerSignals({ shutdownHook: () => client.destroy() });
