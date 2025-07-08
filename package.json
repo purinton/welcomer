@@ -2,7 +2,7 @@
     "name": "@purinton/welcomer",
     "type": "module",
     "version": "1.0.0",
-    "description": "A modern Discord app built with Node.js, based on the purinton/discord foundation.",
+    "description": "A minimal Discord bot that replies to every message in a specific channel with a 👋 emoji.",
     "main": "welcomer.mjs",
     "scripts": {
         "start": "node welcomer.mjs",
@@ -13,7 +13,11 @@
         "url": "git+https://github.com/purinton/welcomer.git"
     },
     "keywords": [
-        "welcomer",
+        "discord",
+        "bot",
+        "emoji",
+        "welcome",
+        "minimal",
         "nodejs"
     ],
     "author": "Russell Purinton <russell@purinton.us>",
