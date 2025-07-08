@@ -1,6 +1,5 @@
 # [![Purinton Dev](https://purinton.us/logos/brand.png)](https://discord.gg/QSBxQnX7PF)
 
-
 ## @purinton/welcomer [![npm version](https://img.shields.io/npm/v/@purinton/welcomer.svg)](https://www.npmjs.com/package/@purinton/welcomer)[![license](https://img.shields.io/github/license/purinton/welcomer.svg)](LICENSE)[![build status](https://github.com/purinton/welcomer/actions/workflows/nodejs.yml/badge.svg)](https://github.com/purinton/welcomer/actions)
 
 A minimal Discord bot that replies to every message in a specific welcome channel with a 👋 emoji. No slash commands, no configuration beyond a few environment variables.
@@ -17,13 +16,9 @@ A minimal Discord bot that replies to every message in a specific welcome channe
 - [Running as a Service (systemd)](#running-as-a-service-systemd)
 - [Docker](#docker)
 - [Customization](#customization)
-  - [Commands](#commands)
-  - [Events](#events)
-  - [Locales](#locales)
 - [Testing](#testing)
 - [Support](#support)
 - [License](#license)
-
 
 ## Features
 
@@ -32,7 +27,6 @@ A minimal Discord bot that replies to every message in a specific welcome channe
 - Simple configuration: just set your channel ID in `.env`
 - Modern Node.js, ESM, and Docker support
 - Logging and signal handling via `@purinton/common`
-
 
 ## Getting Started
 
@@ -50,6 +44,7 @@ A minimal Discord bot that replies to every message in a specific welcome channe
      ```bash
      cp .env.example .env
      ```
+
    - Edit `.env` and set your Discord bot token and the channel ID you want the bot to watch:
 
      ```env
@@ -67,20 +62,18 @@ A minimal Discord bot that replies to every message in a specific welcome channe
    node welcomer.mjs
    ```
 
-
 ## Configuration
 
 All configuration is handled via environment variables in the `.env` file. The only required variable for basic operation is `WELCOME_CHANNEL_ID`.
 
 See `.env.example` for the full list:
 
-```
+```ini
 LOG_LEVEL=info
 DISCORD_CLIENT_ID=your_client_id_here
 DISCORD_TOKEN=your_app_token_here
 WELCOME_CHANNEL_ID=your_welcome_channel_id_here
 ```
-
 
 ## Running as a Service (systemd)
 
@@ -94,7 +87,6 @@ WELCOME_CHANNEL_ID=your_welcome_channel_id_here
    sudo systemctl start welcomer
    sudo systemctl status welcomer
    ```
-
 
 ## Docker
 
@@ -110,13 +102,11 @@ WELCOME_CHANNEL_ID=your_welcome_channel_id_here
    docker run --env-file .env welcomer
    ```
 
-
 ## Customization
 
 This bot is intentionally minimal. If you want to change the emoji, channel, or add more features, edit the event handler in `events/messageCreate.mjs`.
 
 You can add more event handlers in the `events/` directory if you want to expand functionality.
-
 
 ## Testing
 
@@ -127,7 +117,6 @@ npm test
 ```
 
 Add your tests in the `tests/` folder.
-
 
 ## Support
 
